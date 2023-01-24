@@ -1,0 +1,6 @@
+/.venv
+/db.sqlite3
+/play.py 
+/app.js
+/droptable.py
+.env

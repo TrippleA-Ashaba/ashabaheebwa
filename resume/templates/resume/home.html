@@ -1,0 +1,812 @@
+{% extends 'resume/base.html' %}{% load static %}{% block content %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+	<div class="hero-container">
+		<h1>Albert Ashaba Aheebwa</h1>
+		<h2>Engineer, Developer, Coder</h2>
+		<a href="#about" class="btn-scroll scrollto" title="Scroll Down"
+			><i class="bx bx-chevron-down"></i
+		></a>
+	</div>
+</section>
+<!-- End Hero -->
+
+<main id="main">
+	<!-- ======= About Me Section ======= -->
+	<section id="about" class="about">
+		<div class="container">
+			<div class="section-title">
+				<span>About Me</span>
+				<h2>About Me</h2>
+				<p>A Full Stack Developer with an emphasis on the Backend from Kampala, UG.</p>
+			</div>
+
+			<div class="row">
+				<div
+					class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start"
+				></div>
+				<div class="col-lg-8 d-flex flex-column align-items-stretch">
+					<div class="content ps-lg-4 d-flex flex-column justify-content-center">
+						<div class="m-5">
+							<p>
+								Hello! My name is <strong>Albert</strong> and I enjoy creating
+								things for the internet. I am Software Engineering enthusiast who is
+								very eager learn and always ready to share my knowledge.
+							</p>
+							<p>
+								My career goal is to become the person everyone runs to for a
+								solution.
+							</p>
+							<p>
+								My interest in web development started back in 2022 when I decided
+								to try editing a resume template during the pandemic lockdown —
+								turns out trying to center a div taught me a lot about HTML & CSS!
+							</p>
+							<p>
+								Fast-forward to today, and I have had the privilege of joining a
+								Bootcamp team where I have worked on industrial level projects,
+								built and maintained websites for people and companies.
+							</p>
+							<p>My focus nowadays is on the Backend in Python and Node.</p>
+
+							<p>
+								I have also recently launched a
+								<a href="{% url 'blog_home' %}" class="fw-bold"> Blog </a>
+								where I document my programming journey in this competitive sector.
+								With a few tutorials of new things I get to learn along the way.
+							</p>
+						</div>
+					</div>
+					<!-- End .content-->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Me Section -->
+
+	<!-- ======= Features Section ======= -->
+	<section id="features" class="features">
+		<div class="container">
+			<div class="section-title">
+				<span>Skills</span>
+				<h2>Skills</h2>
+				<p>A few technologies I have been working with recently.</p>
+			</div>
+
+			<div class="row" data-aos="fade-up" data-aos-delay="300">
+				<div class="col-lg-3 col-md-4">
+					<div class="icon-box">
+						<i class="ri-html5-fill" style="color: #ff3d00"></i>
+						<h3><a href="">HTML</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+					<div class="icon-box">
+						<i class="ri-css3-fill" style="color: #264de4"></i>
+						<h3><a href="">CSS</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/js.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a href="">JavaScript</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/python.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a href="">Python</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/django.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a href="">Django</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/flask.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a href="">Flask</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="ri-github-fill" style="color: #000000"></i>
+						<h3><a href="">Git</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/node.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a href="">Node</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="ri-trello-fill" style="color: #4784ff"></i>
+						<h3><a href="">Trello</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/heroku.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a href="">Heroku</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="ri-leaf-fill" style="color: rgb(0, 129, 0)"></i>
+						<h3><a href="">Mongo DB</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<!-- <i class="ri-fingerprint-line" style="color: #29cc61"> -->
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/postgres.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+
+						<h3><a href="">PostgresSql</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="bi bi-bootstrap-fill" style="color: #712cf9"></i>
+						<h3><a href="">Bootstrap</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/express.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a href="">Express.js</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/cicd.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a href="">CI/CD</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/linode.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a href="">Linode</a></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Features Section -->
+
+	<!-- ======= Specials Section ======= -->
+	<section id="resume" class="specials">
+		<div class="container">
+			<div class="section-title">
+				<span>Where I have worked</span>
+				<h2>Where I have worked</h2>
+				<p>My experience</p>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-3">
+					<ul class="nav nav-tabs flex-column">
+						<li class="nav-item">
+							<a class="nav-link active show" data-bs-toggle="tab" href="#tab-1"
+								>Catalyst Project</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-2"
+								>Forex Exchange Site</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-3">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-4"
+								>Password Generator</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-5"
+								>Weather Web App</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-6"
+								>Linux Server Admin</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-9 mt-4 mt-lg-0">
+					<div class="tab-content">
+						<div class="tab-pane active show" id="tab-1">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										Engineer @ Clerk International University, Refactory.
+										<span class="fs-6 ms-3 text-muted"> NODE</span>
+									</h3>
+									<p class="fst-italic">8 Aug - 25 Nov</p>
+									<ul style="list-style-type: circle">
+										<li>
+											<strong>Roles & Permisions :</strong>
+											Implemented login and signup feature using Passport Js
+											so that the users can be taken to their respective
+											dashboards on logging in. Certain users were only
+											allowed to access specific pages depending on their
+											roles.
+										</li>
+										<li>
+											<strong>MongoDB :</strong> Gained experience in working
+											with the NOSQL database. Where I learned and practiced
+											creating models, querying data, creating collections and
+											aggregation pipelines and CRUD operations. Worked with
+											Mongoose JS
+										</li>
+										<li>
+											<strong>Nodejs :</strong>
+											Used Nodejs for the backend in conjunction with Express
+											JS to create servers and the app. Learned about ES
+											modules and Common Js modules and when to use which.
+										</li>
+										<li>
+											<strong>Product Management :</strong> Employed proven
+											skills of Lean and Agile (Scrum) to ensure the MVP was
+											functional and ready in the timely manner. I used Trello
+											as my project management tool.
+										</li>
+										<li>
+											<strong>UI/UX :</strong> Created a wonderful UI design
+											for the users, with quick an easy navigation by using
+											Html/CSS/JavaScript/Pug and Bootstrap 5. While also
+											applying google fonts, material icons and font awesome
+											icons.
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-2">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										A WCK Markets Website.
+										<span class="fs-6 ms-3 text-muted"> BOOTSTRAP, PHP</span>
+									</h3>
+									<p class="fst-italic">Freelance</p>
+									<ul style="list-style-type: circle">
+										<li>
+											<strong>Bootstrap :</strong> Created a site where I took
+											advantage of the Bootsrap made templates. Added few
+											sections using my css and html knowledge.
+										</li>
+										<li>
+											<strong>Linux Server Admin :</strong>
+											Hosted the site on Linode. Used Apache to serve the site
+											and github to push and commit changes.
+										</li>
+										<li>
+											<strong>Php :</strong>
+											Learned PHP so that I can make the navbar dynamic by
+											extending and including the base template.
+										</li>
+										<li>
+											<strong>SendGrid :</strong>
+											Integrated Twilio's sendgrid for members to communicate
+											with Administrators.
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-3">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										A blog for Coders by Coders.
+										<span class="fs-6 ms-3 text-muted"> PYTHON, DJANGO</span>
+									</h3>
+									<p class="fst-italic">Personal Project</p>
+									<ul style="list-style-type: circle">
+										<li>
+											<strong>Django Framework :</strong>
+											I maintain a Blog that I created with a python backend.
+											I have used Class Based Views as well as Function Based
+											Views.
+										</li>
+										<li>
+											<strong>CRUD :</strong>
+											The blog app is dynamic with ability to Create, Read,
+											Update and Delete a post. Using Django's battery
+											included and DRY attributes, I have been focused on
+											doing what's important, creating content.
+										</li>
+										<p class="mt-3">
+											<em>The blog is still being improved daily. </em>
+										</p>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-4">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										Password Generator.
+										<span class="fs-6 ms-3 text-muted"> PYTHON</span>
+									</h3>
+									<p class="fst-italic">Personal</p>
+									<p>
+										This GUI application will ask the user to enter the length
+										of the password he/she wants and the pass. A button will be
+										provided and on clicking that button, a password that
+										contains upper and lower case letters, numbers and symbols
+										will be generated.
+									</p>
+									<ul style="list-style-type: circle">
+										<li><strong> TKinter : </strong> GUI</li>
+										<li><strong>Paperclip :</strong> Copy to clipboard</li>
+										<li>
+											<strong>Random :</strong> Python builtin module for
+											randomization
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-5">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										Open Weather Map Api Project
+										<span class="fs-6 ms-3 text-muted">Python, Django</span>
+									</h3>
+									<p class="fst-italic">Personal</p>
+									<p>
+										Created a python script that would get the weather forecast
+										data from the Open Weather Map API. Used Django to give the
+										user an inteface for interactions. The User simply enters
+										the city name and in return it displays the day, time,
+										weather status and temperature.
+									</p>
+									<ul style="list-style-type: circle">
+										<li>
+											<strong>Requests :</strong>A simple, yet elegant, HTTP
+											library.
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-6">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										Linux Server Administrator
+										<span class="fs-6 ms-3 text-muted">Linode</span>
+									</h3>
+									<p class="fst-italic">Personal, Freelance</p>
+									<p>
+										I have hosted and maintained different secure apps and
+										websites on Linode Servers for both Personal and Clients'
+										use.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Specials Section -->
+
+	<!-- ======= My Portfolio Section ======= -->
+	<section id="portfolio" class="portfolio">
+		<div class="container">
+			<div class="section-title">
+				<span>My Portfolio</span>
+				<h2>My Portfolio</h2>
+				<p>Somethings I have built.</p>
+			</div>
+
+			<ul id="portfolio-flters" class="d-flex justify-content-center">
+				<li data-filter="*" class="filter-active">All</li>
+				<li data-filter=".filter-app">Apps</li>
+				<li data-filter=".filter-py">Python</li>
+				<li data-filter=".filter-dj">Django</li>
+				<li data-filter=".filter-js">JavaScript</li>
+				<li data-filter=".filter-nj">Node</li>
+			</ul>
+
+			<div class="row portfolio-container">
+				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/portfolio-1.jpg' %}"
+							class="img-fluid"
+							alt=""
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>App 1</h4>
+						<p>App</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/portfolio-1.jpg' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="App 1"
+							><i class="bx bx-plus"></i
+						></a>
+						<a href="portfolio-details.html" class="details-link" title="More Details"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-py">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/portfolio-2.jpg' %}"
+							class="img-fluid"
+							alt=""
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Web 3</h4>
+						<p>Web</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/portfolio-2.jpg' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Web 3"
+							><i class="bx bx-plus"></i
+						></a>
+						<a href="portfolio-details.html" class="details-link" title="More Details"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-dj">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/portfolio-3.jpg' %}"
+							class="img-fluid"
+							alt=""
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>App 2</h4>
+						<p>App</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/portfolio-3.jpg' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="App 2"
+							><i class="bx bx-plus"></i
+						></a>
+						<a href="portfolio-details.html" class="details-link" title="More Details"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-nj">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/portfolio-4.jpg' %}"
+							class="img-fluid"
+							alt=""
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Card 2</h4>
+						<p>Card</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/portfolio-4.jpg' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Card 2"
+							><i class="bx bx-plus"></i
+						></a>
+						<a href="portfolio-details.html" class="details-link" title="More Details"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-js">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/portfolio-5.jpg' %}"
+							class="img-fluid"
+							alt=""
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Web 2</h4>
+						<p>Web</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/portfolio-5.jpg' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Web 2"
+							><i class="bx bx-plus"></i
+						></a>
+						<a href="portfolio-details.html" class="details-link" title="More Details"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/portfolio-6.jpg' %}"
+							class="img-fluid"
+							alt=""
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>App 3</h4>
+						<p>App</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/portfolio-6.jpg' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="App 3"
+							><i class="bx bx-plus"></i
+						></a>
+						<a href="portfolio-details.html" class="details-link" title="More Details"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/portfolio-7.jpg' %}"
+							class="img-fluid"
+							alt=""
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Card 1</h4>
+						<p>Card</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/portfolio-7.jpg' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Card 1"
+							><i class="bx bx-plus"></i
+						></a>
+						<a href="portfolio-details.html" class="details-link" title="More Details"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-card">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/portfolio-8.jpg' %}"
+							class="img-fluid"
+							alt=""
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Card 3</h4>
+						<p>Card</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/portfolio-8.jpg' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Card 3"
+							><i class="bx bx-plus"></i
+						></a>
+						<a href="portfolio-details.html" class="details-link" title="More Details"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/portfolio-9.jpg' %}"
+							class="img-fluid"
+							alt=""
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Web 3</h4>
+						<p>Web</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/portfolio-9.jpg' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Web 3"
+							><i class="bx bx-plus"></i
+						></a>
+						<a href="portfolio-details.html" class="details-link" title="More Details"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End My Portfolio Section -->
+
+	<!-- ======= Contact Me Section ======= -->
+	<section id="contact" class="contact">
+		<div class="container">
+			<div class="section-title">
+				<span>Contact Me</span>
+				<h2>Contact Me</h2>
+				<p>Get in touch. Let me show you how deep the rabbit hole goes.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="info-box">
+								<i class="bx bx-share-alt"></i>
+								<h3>Social Profiles</h3>
+								<div class="social-links">
+									<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+
+									<a href="#" class="github"><i class="bi bi-github"></i></a>
+
+									<a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="info-box mt-4">
+								<i class="bx bx-envelope"></i>
+								<h3>Email Me</h3>
+								<p>albertashaba.a@gmail.com</p>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="info-box mt-4">
+								<i class="bx bx-phone-call"></i>
+								<h3>Call Me</h3>
+								<p>+256 703 621 524</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<form
+						action="forms/contact.php"
+						method="post"
+						role="form"
+						class="php-email-form"
+					>
+						<div class="row">
+							<div class="col-md-6 form-group">
+								<input
+									type="text"
+									name="name"
+									class="form-control"
+									id="name"
+									placeholder="Your Name"
+									required
+								/>
+							</div>
+							<div class="col-md-6 form-group mt-3 mt-md-0">
+								<input
+									type="email"
+									class="form-control"
+									name="email"
+									id="email"
+									placeholder="Your Email"
+									required
+								/>
+							</div>
+						</div>
+						<div class="form-group mt-3">
+							<input
+								type="text"
+								class="form-control"
+								name="subject"
+								id="subject"
+								placeholder="Subject"
+								required
+							/>
+						</div>
+						<div class="form-group mt-3">
+							<textarea
+								class="form-control"
+								name="message"
+								rows="6"
+								placeholder="Message"
+								required
+							></textarea>
+						</div>
+						<div class="my-3">
+							<div class="loading">Loading</div>
+							<div class="error-message"></div>
+							<div class="sent-message">Your message has been sent. Thank you!</div>
+						</div>
+						<div class="text-center">
+							<button type="submit">Send Message</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Contact Me Section -->
+</main>
+<!-- End #main -->
+{% endblock content %}
