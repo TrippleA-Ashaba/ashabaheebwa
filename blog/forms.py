@@ -14,3 +14,10 @@ class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ("author", "email", "content")
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=80, min_length=5)
+    email = forms.EmailField(max_length=80)
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField(widget=(forms.Textarea(attrs={"rows": 4})))
