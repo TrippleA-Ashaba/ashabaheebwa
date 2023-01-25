@@ -40,7 +40,7 @@ def home(request):
                 html_message=html,
                 fail_silently=False,
             )
-            return redirect("resume")
+            return redirect("home")
         else:
             messages.warning(request, "Something Wrong, Email was not sent!")
 
