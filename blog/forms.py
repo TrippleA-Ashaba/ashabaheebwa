@@ -17,7 +17,38 @@ class CommentForm(ModelForm):
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=80, min_length=5)
-    email = forms.EmailField(max_length=80)
-    subject = forms.CharField(max_length=100)
-    message = forms.CharField(widget=(forms.Textarea(attrs={"rows": 4})))
+    name = forms.CharField(
+        max_length=80,
+        min_length=5,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Tim Berners-Lee",
+            }
+        ),
+    )
+    email = forms.EmailField(
+        max_length=80,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "i_invented@internet.com",
+            }
+        ),
+    )
+    subject = forms.CharField(
+        max_length=100,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "The Hitchhiker's guide to the Internet",
+            }
+        ),
+    )
+    message = forms.CharField(
+        widget=(
+            forms.Textarea(
+                attrs={
+                    "rows": 4,
+                    "placeholder": "Zaphod Beeblebrox is the key... I also love squirrels.",
+                }
+            )
+        )
+    )
