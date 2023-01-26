@@ -64,15 +64,20 @@
 			</div>
 			<!-- End Info Item -->
 		</div>
+		<div class="row shadow p-3 pb-3 my-5 bg-body-tertiary rounded">
+			<div class="col"></div>
+			<div class="col-md-8">
+				<form action="{% url 'blog_contact' %}" method="post" role="form">
+					<div class="form mt-5">
+						{% csrf_token %} {{form|crispy}}
 
-		<div class="form mt-5">
-			<form action="{% url 'blog_contact' %}" method="post" role="form">
-				{% csrf_token %} {{form|crispy}}
-
-				<div class="text-center">
-					<button class="btn btn-primary" type="submit">Send Message</button>
-				</div>
-			</form>
+						<div class="text-center">
+							<button class="btn btn-primary my-3" type="submit">Send Message</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col"></div>
 		</div>
 		<!-- End Contact Form -->
 	</div>
