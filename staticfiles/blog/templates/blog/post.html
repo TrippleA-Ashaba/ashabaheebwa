@@ -1,0 +1,115 @@
+{% extends 'blog/base.html' %} {% load static %}{% load crispy_forms_tags %}
+<div></div>
+{% block title %}{{title|title}}{% endblock %}
+<div></div>
+{% block content %}
+<section class="single-post-content">
+	{% if messages %} {% for message in messages %}
+	<div class="container">
+		<div
+			{%
+			if
+			message.tags
+			%}
+			class="alert alert-{{message.tags}} alert-dismissible fade show"
+			{%
+			endif
+			%}
+			role="alert"
+		>
+			<h6 class="alert-heading mb-0 text-center fw-bold">{{message}}</h6>
+
+			<button
+				type="button"
+				class="btn-close"
+				data-bs-dismiss="alert"
+				aria-label="Close"
+			></button>
+		</div>
+	</div>
+	{% endfor %} {% endif %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9 post-content" data-aos="fade-up">
+				<!-- ======= Single Post Content ======= -->
+				<div class="single-post">
+					<div class="post-meta">
+						<span class="date">{{post.category}}</span>
+						<span class="mx-1">&bullet;</span>
+						<span>{{post.date_updated|date:'M jS Y'}}</span>
+						<span class="mx-1">&bullet;</span>
+						<span>By {{post.author.first_name}} {{post.author.last_name}}</span>
+					</div>
+					<h1 class="mb-5">{{post.title}}</h1>
+
+					<figure class="my-4">
+						<img src="{{post.image.url}}" alt="" class="img-fluid" />
+					</figure>
+					<p>
+						<span class="firstcharacter">{{post.content|slice:':1'}}</span
+						>{{post.content|slice:'1:'|linebreaks}}
+					</p>
+				</div>
+				<!-- End Single Post Content -->
+
+				<!-- ======= Comments ======= -->
+				<div class="comments">
+					<h5 class="comment-title py-4">{{comments|length}} Comments</h5>
+					{% for comment in comments %}
+					<div class="comment d-flex mb-1">
+						<div class="flex-shrink-0">
+							<div class="avatar avatar-sm rounded-circle ps-2 bg-dark me-2">
+								<span class="fs-5 fw-bold text-white text-center"
+									>{{comment.author|slice:':1'|title}}
+								</span>
+							</div>
+						</div>
+						<div class="flex-grow-1 ms-2 ms-sm-3">
+							<div class="comment-meta d-flex align-items-baseline">
+								<h6 class="me-2">{{comment.author}}</h6>
+								<span class="text-muted"
+									>{{comment.date_published|timesince:today}}</span
+								>
+							</div>
+							<div class="comment-body">{{comment.content|linebreaks}}</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<!-- End Comments -->
+
+				<!-- ======= Comments Form ======= -->
+				<div class="row justify-content-center mt-5">
+					<div class="col-lg-12">
+						<h5 class="comment-title">
+							Leave a Comment
+							<span class="text-muted fs-6 ms-2"
+								>("Does not require login to leave a Comment")</span
+							>
+						</h5>
+						<form method="post">
+							{% csrf_token %}
+							<div class="row">
+								{{form|crispy}}
+								<div class="col-12">
+									<input
+										type="submit"
+										class="btn btn-primary"
+										value="Post comment"
+									/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- End Comments Form -->
+			</div>
+
+			<!-- ======= Sidebar ======= -->
+			{% include 'blog/sidebar.html' %}
+		</div>
+	</div>
+</section>
+
+<!-- End #main -->
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}{% load static %} {% block title %}{{title|title}}{% endblock %}
+<div></div>
+{% block content %}
+
+<section>
+	<div class="container" data-aos="fade-up">
+		<div class="row">
+			<div class="col-12 text-center mb-5">
+				<div class="row justify-content-center">
+					<div class="col-lg-6">
+						<h2 class="display-4">About</h2>
+						<p>
+							Founded in 2023 by
+							<a href="{% url 'home' %}" class="text-decoration-underline"
+								>Albert Ashaba Aheebwa</a
+							>, The AAA Blog is your how-not-to guide for developing software by
+							self-taught developers. We rehash tales of cataclysmic development, from
+							project management gone fabulously wrong to incomprehensible coding
+							choices.
+						</p>
+						<p>
+							This blog is for those starting out and are trying to hack their way
+							into this field with too much to learn and too many resources to choose
+							from in so little time.
+						</p>
+						<p>
+							This is not a school, but rather a hitchhiker's guide on what not-to-do
+							if you wish not to fail at software development before you even start.
+						</p>
+						<h4>Don't Panic!</h4>
+						<p>
+							<span class="fw-bold me-2">NOTE:</span>
+							You might have noticed that code examples and tutorials in this blog are
+							weiredly most - if not all - about python programming. This is because
+							your lovely author, even though he's multilingual, prefers the easiest
+							and best programming language.
+							<span class="fw-bold ms-2 me-2">#EverybodyLovesPython</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- End #main -->
+
+{% endblock content %}

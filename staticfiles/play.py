@@ -1,0 +1,4 @@
+import secrets
+
+print(secrets.token_urlsafe(64))
+"x5nvga9VTFwfGLnZ0RunTpjneWsTwyCHSob_TBgQxAzSnKQgxU8awnzHotp-xv1B4le3IE1FhjtCEHI1WKavng"
