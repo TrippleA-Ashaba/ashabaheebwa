@@ -91,7 +91,7 @@ class TutorialView(ListView):
         "category": "tutorials",
         "title": "tutorials",
     }
-    template_name = "blog/category.html"
+    template_name = "blog/tutorials.html"
 
 
 # ============================Get chat posts================================
@@ -107,7 +107,7 @@ class ProgrammingView(ListView):
         "category": "programming",
         "title": "programmming",
     }
-    template_name = "blog/category.html"
+    template_name = "blog/programming.html"
 
 
 # ===============================the About page============================
