@@ -81,7 +81,7 @@ def post_detail_view(request, slug):
 # =======================Get tutorial posts only===========================
 class TutorialView(ListView):
     model = Post
-    posts = Post.objects.all()
+    posts = Post.objects.filter(status=1, category="tutorial")
     sidebar_posts = Post.objects.filter(status=1)
 
     extra_context = {
@@ -97,7 +97,7 @@ class TutorialView(ListView):
 # ============================Get chat posts================================
 class ProgrammingView(ListView):
     model = Post
-    posts = Post.objects.all()
+    posts = Post.objects.filter(status=1, category="programming")
     sidebar_posts = Post.objects.filter(status=1)
 
     extra_context = {
