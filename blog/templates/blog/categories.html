@@ -10,7 +10,6 @@
 
 				{% for post in posts %}
 				<div></div>
-				{% if forloop.counter < 6 %}
 				<div class="d-md-flex post-entry-2 half">
 					<a href="{{post.get_absolute_url}}" class="me-4 thumbnail">
 						<img src="{{post.image.url}}" alt="" class="img-fluid" />
@@ -38,7 +37,7 @@
 						</div> -->
 					</div>
 				</div>
-				{% endif %} {% endfor %}
+				{% endfor %}
 
 				<div class="text-start py-4">
 					<div class="custom-pagination">
