@@ -13,11 +13,16 @@ from .models import Post
 YEAR = timezone.now().year
 
 
+def get_all_posts():
+    return Post.objects.filter(status=1)
+
+
 # =====================the home view======================
 def home_view(request):
 
     # get published posts
-    posts = Post.objects.filter(status=1)
+    posts = get_all_posts()
+    print(posts)
     programming_posts = posts.filter(category="programming")
     tutorial_posts = posts.filter(category="tutorial")
 
@@ -39,7 +44,7 @@ def post_detail_view(request, slug):
     # get post by slug name instead of postID
     post = Post.objects.get(slug=slug)
     # print(post.id)
-    sidebar_posts = Post.objects.filter(status=1)
+    sidebar_posts = get_all_posts()
     comments = post.comments.filter(comment_post=post)
 
     # time for use on timesince in comment section
@@ -78,36 +83,19 @@ def post_detail_view(request, slug):
     )
 
 
-# =======================Get tutorial posts only===========================
-class TutorialView(ListView):
-    model = Post
-    posts = Post.objects.filter(status=1, category="tutorial")
-    sidebar_posts = Post.objects.filter(status=1)
-
-    extra_context = {
-        "year": YEAR,
-        "posts": posts,
-        "sidebar_posts": sidebar_posts,
-        "category": "tutorials",
-        "title": "tutorials",
-    }
-    template_name = "blog/category.html"
-
-
-# ============================Get chat posts================================
-class ProgrammingView(ListView):
-    model = Post
-    posts = Post.objects.filter(status=1, category="programming")
-    sidebar_posts = Post.objects.filter(status=1)
-
-    extra_context = {
-        "year": YEAR,
-        "posts": posts,
-        "sidebar_posts": sidebar_posts,
-        "category": "programming",
-        "title": "programmming",
-    }
-    template_name = "blog/category.html"
+# ================================== All posts view ========================
+def all_posts_view(request):
+    all_posts = get_all_posts()
+    return render(
+        request,
+        "blog/all_posts.html",
+        {
+            "year": YEAR,
+            "posts": all_posts,
+            "sidebar_posts": all_posts,
+            "title": "all posts",
+        },
+    )
 
 
 # ===============================the About page============================

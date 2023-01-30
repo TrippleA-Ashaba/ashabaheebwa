@@ -83,44 +83,17 @@ def post_detail_view(request, slug):
     )
 
 
-# =======================Get tutorial posts only===========================
-def tutorialView(request):
+# ================================== All posts view ========================
+def all_posts_view(request):
     all_posts = get_all_posts()
-    posts = [post for post in all_posts if post.category == "tutorial"]
-    # print(posts)
-    sidebar_posts = get_all_posts()
-
     return render(
         request,
-        "blog/categories.html",
+        "blog/all_posts.html",
         {
             "year": YEAR,
-            "posts": posts,
-            "sidebar_posts": sidebar_posts,
-            "category": "tutorials",
-            "title": "tutorials",
-        },
-    )
-
-
-# ============================Get chat posts================================
-
-
-def programmingView(request):
-    all_posts = get_all_posts()
-    posts = [post for post in all_posts if post.category == "programming"]
-    # print(posts)
-    sidebar_posts = get_all_posts()
-
-    return render(
-        request,
-        "blog/categories.html",
-        {
-            "year": YEAR,
-            "posts": posts,
-            "sidebar_posts": sidebar_posts,
-            "category": "tutorials",
-            "title": "tutorials",
+            "posts": all_posts,
+            "sidebar_posts": all_posts,
+            "title": "all posts",
         },
     )
 
