@@ -72,7 +72,16 @@
 				<nav id="navbar" class="navbar">
 					<ul>
 						<li><a href="{% url 'blog_home' %}">Home</a></li>
-
+						<li class="dropdown">
+							<a href="{% url 'all_posts' %}"
+								><span>All Posts</span>
+								<i class="bi bi-chevron-down dropdown-indicator"></i
+							></a>
+							<ul>
+								<li><a href="{% url 'blog_prog' %}">General</a></li>
+								<li><a href="{% url 'blog_tut' %}">Tutorials</a></li>
+							</ul>
+						</li>
 						<li><a href="{% url 'blog_about' %}">About</a></li>
 						<li><a href="{% url 'blog_contact' %}">Contact</a></li>
 
