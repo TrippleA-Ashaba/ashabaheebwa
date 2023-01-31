@@ -22,7 +22,6 @@ def home_view(request):
 
     # get published posts
     posts = get_all_posts()
-    print(posts)
     programming_posts = posts.filter(category="programming")
     tutorial_posts = posts.filter(category="tutorial")
 
@@ -94,6 +93,21 @@ def all_posts_view(request):
             "posts": all_posts,
             "sidebar_posts": all_posts,
             "title": "all posts",
+        },
+    )
+
+
+# ================================= Programming =========================
+def prog_view(request):
+    posts = Post.objects.filter(category="programming")
+    return render(
+        request,
+        "blog/prog.html",
+        {
+            "year": YEAR,
+            "posts": posts,
+            "sidebar_posts": get_all_posts,
+            "title": "Programming",
         },
     )
 
