@@ -112,6 +112,20 @@ def prog_view(request):
     )
 
 
+def tut_view(request):
+    posts = Post.objects.filter(category="tutorial")
+    return render(
+        request,
+        "blog/tut.html",
+        {
+            "year": YEAR,
+            "posts": posts,
+            "sidebar_posts": get_all_posts,
+            "title": "Tutorials",
+        },
+    )
+
+
 # ===============================the About page============================
 class AboutView(TemplateView):
     extra_context = {"year": YEAR, "title": "about"}
