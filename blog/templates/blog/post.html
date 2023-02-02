@@ -45,10 +45,7 @@
 					<figure class="my-4">
 						<img src="{{post.image.url}}" alt="" class="img-fluid" />
 					</figure>
-					<p>
-						<span class="firstcharacter">{{post.content|slice:':1'}}</span
-						>{{post.content|slice:'1:'|linebreaks}}
-					</p>
+					<p>{{post.content|safe}}</p>
 				</div>
 				<!-- End Single Post Content -->
 
