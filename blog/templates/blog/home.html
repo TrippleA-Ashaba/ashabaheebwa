@@ -20,7 +20,7 @@
 							>
 								<div class="img-bg-inner">
 									<h2>{{post.title}}</h2>
-									<p>{{post.content | truncatewords:30}}</p>
+									<p>{{post.content |safe| truncatewords:30}}</p>
 								</div>
 							</a>
 						</div>
@@ -59,7 +59,7 @@
 					<h2>
 						<a href="{{posts.0.get_absolute_url}}">{{posts.0.title}}</a>
 					</h2>
-					<p class="mb-4 d-block">{{posts.0.content | truncatewords:100}}</p>
+					<p class="mb-4 d-block">{{posts.0.content |safe| truncatewords:100}}</p>
 				</div>
 			</div>
 
@@ -160,7 +160,7 @@
 								>{{programming_posts.0.title}}</a
 							>
 						</h3>
-						<p>{{programming_posts.0.content|truncatewords:50}}</p>
+						<p>{{programming_posts.0.content |safe|truncatewords:50}}</p>
 						<!-- <div class="d-flex align-items-center author">
 							<div class="photo">
 								<img
@@ -197,7 +197,7 @@
 							</h2>
 							<!-- <span class="author mb-3 d-block">Jenny Wilson</span> -->
 							<p class="mb-4 d-block">
-								{{programming_posts.1.content|truncatewords:20}}
+								{{programming_posts.1.content |safe|truncatewords:20}}
 							</p>
 						</div>
 
@@ -214,7 +214,7 @@
 							</h2>
 							<!-- <span class="author mb-3 d-block">Jenny Wilson</span> -->
 							<p class="mb-4 d-block">
-								{{programming_posts.3.content|truncatewords:20}}
+								{{programming_posts.3.content |safe|truncatewords:20}}
 							</p>
 						</div>
 					</div>
@@ -238,7 +238,7 @@
 							</h2>
 							<!-- <span class="author mb-3 d-block">Jenny Wilson</span> -->
 							<p class="mb-4 d-block">
-								{{programming_posts.2.content|truncatewords:20}}
+								{{programming_posts.2.content |safe|truncatewords:20}}
 							</p>
 						</div>
 					</div>
@@ -291,7 +291,7 @@
 							>{{tutorial_posts.0.title}}</a
 						>
 					</h2>
-					<p class="mb-4 d-block">{{tutorial_posts.0.content|truncatewords:50}}</p>
+					<p class="mb-4 d-block">{{tutorial_posts.0.content|safe|truncatewords:50}}</p>
 				</div>
 				{% for post in tutorial_posts %} {%if forloop.counter > 1 and forloop.counter < 4%}
 				<div class="post-entry-1 border-bottom">
@@ -304,7 +304,7 @@
 						<a href="{{post.get_absolute_url}}">{{post.title}}</a>
 					</h2>
 					<!-- <span class="author mb-3 d-block">Jenny Wilson</span> -->
-					<p class="mb-4 d-block">{{post.content|truncatewords:30}}</p>
+					<p class="mb-4 d-block">{{post.content |safe|truncatewords:30}}</p>
 				</div>
 				{% endif %} {% endfor %}
 			</div>

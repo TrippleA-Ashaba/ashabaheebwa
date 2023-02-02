@@ -1,3 +1,4 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from django.urls import reverse
 
@@ -16,7 +17,7 @@ class Post(models.Model):
         null=False,
         unique=True,
     )
-    content = models.TextField()
+    content = RichTextUploadingField()
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     image = models.ImageField(blank=True, null=True)
     category = models.CharField(max_length=15, choices=CATEGORY, default="tutorial")
