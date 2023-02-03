@@ -19,7 +19,7 @@ class Post(models.Model):
     )
     content = RichTextUploadingField()
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    image = models.ImageField(blank=True, null=True)
+    image = models.ImageField()
     category = models.CharField(max_length=15, choices=CATEGORY, default="tutorial")
     status = models.IntegerField(choices=STATUS, default=0)
     date_published = models.DateTimeField(auto_now_add=True)

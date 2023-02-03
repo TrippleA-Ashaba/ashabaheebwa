@@ -21,7 +21,7 @@
 						<h3>
 							<a href="{{post.get_absolute_url}}">{{post.title}}</a>
 						</h3>
-						<p>{{post.content|truncatewords:40}}</p>
+						<p>{{post.content|safe|truncatewords:40}}</p>
 						<div class="d-flex align-items-center author">
 							<div class="photo">
 								<img
