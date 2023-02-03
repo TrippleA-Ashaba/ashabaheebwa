@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}{% load static %} {% block title %}{{title|title}}{% endblock %}
-<div></div>
+<span></span>
 {% block content %}
 
 <section>
@@ -40,13 +40,25 @@
 
 				<div class="text-start py-4">
 					<div class="custom-pagination">
-						<a href="#" class="prev">Prevous</a>
-						<a href="#" class="active">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<a href="#">4</a>
-						<a href="#">5</a>
-						<a href="#" class="next">Next</a>
+						{% if posts.has_previous %}
+						<a href="?page=1" class="prev">First</a>
+						<a href="?page={{posts.previous_page_number}}" class="prev">Prevous</a>
+						{% endif %}
+
+						<span></span>
+						{% for num in posts.paginator.page_range %}
+						<span></span>
+						{% if posts.number == num %}
+						<a href="?page={{num}}" class="active">{{num}}</a>
+						{% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+						<a href="?page={{num}}">{{num}}</a>
+						{% endif %} {% endfor %}
+
+						<span></span>
+						{% if posts.has_next %}
+						<a href="?page={{posts.next_page_number}}" class="next">Next</a>
+						<a href="?page={{posts.paginator.num_pages}}" class="next">Last</a>
+						{% endif %}
 					</div>
 				</div>
 			</div>

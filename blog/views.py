@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
@@ -85,12 +86,15 @@ def post_detail_view(request, slug):
 # ================================== All posts view ========================
 def all_posts_view(request):
     all_posts = get_all_posts()
+    paginator = Paginator(all_posts, 7)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
     return render(
         request,
         "blog/all_posts.html",
         {
             "year": YEAR,
-            "posts": all_posts,
+            "posts": page_obj,
             "sidebar_posts": all_posts,
             "title": "all posts",
         },
@@ -100,12 +104,16 @@ def all_posts_view(request):
 # ================================= Programming =========================
 def prog_view(request):
     posts = Post.objects.filter(category="programming")
+    paginator = Paginator(posts, 7)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
     return render(
         request,
         "blog/prog.html",
         {
             "year": YEAR,
-            "posts": posts,
+            "posts": page_obj,
             "sidebar_posts": get_all_posts,
             "title": "Programming",
         },
@@ -114,12 +122,16 @@ def prog_view(request):
 
 def tut_view(request):
     posts = Post.objects.filter(category="tutorial")
+
+    paginator = Paginator(posts, 7)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
     return render(
         request,
         "blog/tut.html",
         {
             "year": YEAR,
-            "posts": posts,
+            "posts": page_obj,
             "sidebar_posts": get_all_posts,
             "title": "Tutorials",
         },
