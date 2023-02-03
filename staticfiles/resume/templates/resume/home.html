@@ -1,0 +1,793 @@
+{% extends 'resume/base.html' %}{% load static %} {% load crispy_forms_tags %} {% block content %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+	{% if messages %} {% for message in messages %}
+	<div class="container">
+		<div
+			{%
+			if
+			message.tags
+			%}
+			class="alert alert-{{message.tags}} alert-dismissible fade show"
+			{%
+			endif
+			%}
+			role="alert"
+		>
+			<h6 class="alert-heading mb-0 text-center fw-bold">{{message}}</h6>
+
+			<button
+				type="button"
+				class="btn-close"
+				data-bs-dismiss="alert"
+				aria-label="Close"
+			></button>
+		</div>
+	</div>
+	{% endfor %} {% endif %}
+	<div class="hero-container">
+		<h1>Albert Ashaba Aheebwa</h1>
+		<h2>Engineer, Developer, Coder</h2>
+		<a href="#about" class="btn-scroll scrollto" title="Scroll Down"
+			><i class="bx bx-chevron-down"></i
+		></a>
+	</div>
+</section>
+<!-- End Hero -->
+
+<main id="main">
+	<!-- ======= About Me Section ======= -->
+	<section id="about" class="about">
+		<div class="container">
+			<div class="section-title">
+				<span>About Me</span>
+				<h2>About Me</h2>
+				<p>A Full Stack Developer with an emphasis on the Backend from Kampala, UG.</p>
+			</div>
+
+			<div class="row">
+				<div
+					class="image col-lg-4 d-flex align-items-stretch justify-content-center justify-content-lg-start"
+				></div>
+				<div class="col-lg-8 d-flex flex-column align-items-stretch">
+					<div class="content ps-lg-4 d-flex flex-column justify-content-center">
+						<div class="m-5" style="text-align: justify">
+							<div class="mb-3 fw-bold">
+								Education:
+								<span class="col-sm-6 text-primary">BSc. Chemical Engineering</span>
+							</div>
+							<p>
+								Hello! My name is <strong>Albert</strong> and I enjoy creating
+								things for the internet. I am Software Engineering enthusiast who is
+								very eager learn and always ready to share my knowledge.
+							</p>
+							<p>
+								My career goal is to become the person everyone runs to for a
+								solution.
+							</p>
+							<p>
+								My interest in web development started back in 2022 when I decided
+								to try editing a resume template during the pandemic lockdown —
+								turns out trying to center a div taught me a lot about HTML & CSS!
+							</p>
+							<p>
+								Fast-forward to today, and I have had the privilege of joining a
+								Bootcamp team where I have worked on industrial level projects,
+								built and maintained websites for people and companies.
+							</p>
+							<p>
+								My focus nowadays is on the Backend in Python - Django and
+								JavaScript - Node.
+							</p>
+
+							<p>
+								I have also recently launched a
+								<a href="{% url 'blog_home' %}" class="fw-bold"> Blog </a>
+								where I document my programming journey in this competitive sector.
+								With a few tutorials of new things I get to learn along the way.
+							</p>
+						</div>
+					</div>
+					<!-- End .content-->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Me Section -->
+
+	<!-- ======= Features Section ======= -->
+	<section id="features" class="features">
+		<div class="container">
+			<div class="section-title">
+				<span>Skills & Toolbox</span>
+				<h2>Skills & Toolbox</h2>
+				<p>A few technologies I have been working with recently.</p>
+			</div>
+
+			<div class="row" data-aos="fade-up" data-aos-delay="300">
+				<div class="col-lg-3 col-md-4">
+					<div class="icon-box">
+						<i class="ri-html5-fill" style="color: #ff3d00"></i>
+						<h3><a>HTML</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+					<div class="icon-box">
+						<i class="ri-css3-fill" style="color: #264de4"></i>
+						<h3><a>CSS</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/js.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>JavaScript</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/python.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>Python</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/django.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>Django</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="ri-aspect-ratio-line" style="color: #be2759"></i>
+						<h3><a>Responsive Designs</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/flask.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>Flask</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="ri-github-fill" style="color: #000000"></i>
+						<h3><a>Git + Github</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/node.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>Node</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="ri-trello-fill" style="color: #4784ff"></i>
+						<h3><a>Trello</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/heroku.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>Heroku</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="ri-leaf-fill" style="color: rgb(0, 129, 0)"></i>
+						<h3><a>Mongo DB</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<!-- <i class="ri-fingerprint-line" style="color: #29cc61"> -->
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/postgres.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+
+						<h3><a>PostgresSql</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="bi bi-bootstrap-fill" style="color: #712cf9"></i>
+						<h3><a>Bootstrap</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/express.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>Express.js</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/wordpress.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>Wordpress</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<i class="ri-terminal-box-line"></i>
+						<h3><a>Command Line</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/vscode.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>Vscode</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/cicd.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>CI/CD</a></h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mt-4">
+					<div class="icon-box">
+						<img
+							class="me-1"
+							src="{% static 'resume/assets/img/icons/linode.png' %}"
+							width="32px"
+							height="32px"
+							alt=""
+						/>
+						<h3><a>Linode</a></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Features Section -->
+
+	<!-- ======= Specials Section ======= -->
+	<section id="resume" class="specials">
+		<div class="container">
+			<div class="section-title">
+				<span>Experience</span>
+				<h2>Experience</h2>
+				<p>Where I have worked</p>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-3">
+					<ul class="nav nav-tabs flex-column">
+						<li class="nav-item">
+							<a class="nav-link active show" data-bs-toggle="tab" href="#tab-1"
+								>Catalyst Project</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-2"
+								>Forex Exchange Site</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-3">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-4"
+								>Password Manager</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-5"
+								>Weather Web App</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#tab-6"
+								>Linux Server Admin</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-9 mt-4 mt-lg-0">
+					<div class="tab-content" style="text-align: justify">
+						<div class="tab-pane active show" id="tab-1">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										Student @ Clerk International University, Refactory.
+										<span class="fs-6 ms-3 text-muted"> NODEJS</span>
+									</h3>
+									<p class="fst-italic">8 Aug - 25 Nov</p>
+									<ul style="list-style-type: circle">
+										<li>
+											<strong>Roles & Permisions :</strong>
+											Implemented login and signup feature using Passport Js
+											so that the users can be taken to their respective
+											dashboards on logging in. Certain users were only
+											allowed to access specific pages depending on their
+											roles.
+										</li>
+										<li>
+											<strong>MongoDB :</strong> Gained experience in working
+											with the NOSQL database. Where I learned and practiced
+											creating models, querying data, creating collections and
+											aggregation pipelines and CRUD operations. Worked with
+											Mongoose JS
+										</li>
+										<li>
+											<strong>Nodejs :</strong>
+											Used Nodejs for the backend in conjunction with Express
+											JS to create servers and the app. Learned about ES
+											modules and Common Js modules and when to use which.
+										</li>
+										<li>
+											<strong>Product Management :</strong> Employed proven
+											skills of Lean and Agile (Scrum) to ensure the MVP was
+											functional and ready in the timely manner. I used Trello
+											as my project management tool.
+										</li>
+										<li>
+											<strong>UI/UX :</strong> Created a wonderful UI design
+											for the users, with quick an easy navigation by using
+											Html/CSS/JavaScript/Pug and Bootstrap 5. While also
+											applying google fonts, material icons and font awesome
+											icons.
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-2">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										A WCK Markets Website.
+										<span class="fs-6 ms-3 text-muted"> BOOTSTRAP, PHP</span>
+									</h3>
+									<p class="fst-italic">Freelance</p>
+									<ul style="list-style-type: circle">
+										<li>
+											<strong>Bootstrap :</strong> Created a site where I took
+											advantage of the Bootsrap made templates. Added few
+											sections using my css and html knowledge.
+										</li>
+										<li>
+											<strong>Linux Server Admin :</strong>
+											Hosted the site on Linode. Used Apache to serve the site
+											and github to push and commit changes.
+										</li>
+										<li>
+											<strong>Php :</strong>
+											Learned PHP so that I can make the navbar dynamic by
+											extending and including the base template.
+										</li>
+										<li>
+											<strong>SendGrid :</strong>
+											Integrated Twilio's sendgrid for members to communicate
+											with Administrators.
+										</li>
+									</ul>
+									<p>
+										<a
+											class="my-5"
+											href="https://wckmarkets.com"
+											target="_blank"
+											>visit site</a
+										>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-3">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										A blog for Coders by Coders.
+										<span class="fs-6 ms-3 text-muted"> PYTHON, DJANGO</span>
+									</h3>
+									<p class="fst-italic">Personal Project</p>
+									<ul style="list-style-type: circle">
+										<li>
+											<strong>Django Framework :</strong>
+											I maintain a Blog that I created with a python backend.
+											I have used Class Based Views as well as Function Based
+											Views.
+										</li>
+										<li>
+											<strong>CRUD :</strong>
+											The blog app is dynamic with ability to Create, Read,
+											Update and Delete a post. Using Django's battery
+											included and DRY attributes, I have been focused on
+											doing what's important, creating content.
+										</li>
+										<p class="mt-3">
+											<em>The blog is still being improved daily. </em>
+										</p>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-4">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										Password Manager.
+										<span class="fs-6 ms-3 text-muted"> PYTHON</span>
+									</h3>
+									<p class="fst-italic">Personal</p>
+									<p>
+										This GUI application will become your password manager. Gone
+										are the days of asking your wife or husband what that
+										username or password was that you used to sign up for that
+										aerobics class at the YMCA. Type your account details and
+										they will be saved in a Json object. This you do once and
+										you are then able retrieve the details by searching for just
+										that website whose details you want. Password is
+										automatically copied to clipboard.
+									</p>
+									<ul style="list-style-type: circle">
+										<li><strong> TKinter : </strong> GUI</li>
+										<li><strong>Pyperclip :</strong> Copy to clipboard</li>
+										<li>
+											<strong>Secrets :</strong> Python's robust secrets
+											module to generate a 16 character password.
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-5">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										Open Weather Map Api Project
+										<span class="fs-6 ms-3 text-muted">Python, Django</span>
+									</h3>
+									<p class="fst-italic">Personal</p>
+									<p>
+										Created a python script that would get the weather forecast
+										data from the Open Weather Map API. Used Django to give the
+										user an inteface for interactions. The User simply enters
+										the city name and in return it displays the day, time,
+										weather status and temperature.
+									</p>
+									<ul style="list-style-type: circle">
+										<li>
+											<strong>Requests :</strong>A simple, yet elegant, HTTP
+											library.
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-6">
+							<div class="row">
+								<div class="col-lg-12 ms-3 details order-2 order-lg-1">
+									<h3>
+										Linux Server Administrator
+										<span class="fs-6 ms-3 text-muted">Linode</span>
+									</h3>
+									<p class="fst-italic">Personal, Freelance</p>
+									<p>
+										I have hosted and maintained different secure apps and
+										websites on Linode Servers for both Personal and Clients'
+										use.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Specials Section -->
+
+	<!-- ======= My Portfolio Section ======= -->
+	<section id="portfolio" class="portfolio">
+		<div class="container">
+			<div class="section-title">
+				<span>My Portfolio</span>
+				<h2>My Portfolio</h2>
+				<p>A selection of some of the things I have built.</p>
+			</div>
+
+			<ul id="portfolio-flters" class="d-flex justify-content-center">
+				<li data-filter="*" class="filter-active">All</li>
+				<li data-filter=".filter-app">Apps</li>
+				<li data-filter=".filter-web">Web</li>
+			</ul>
+
+			<div class="row portfolio-container">
+				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/djangoweather.png' %}"
+							class="img-fluid"
+							alt="django weather app"
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Weather App</h4>
+						<p>App</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/djangoweather.png' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Weather App"
+							><i class="bx bx-plus"></i
+						></a>
+						<a
+							href="https://github.com/TrippleA-Ashaba/weather_app_django"
+							class="details-link"
+							title="More Details"
+							target="_blank"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/wckmarkets.png' %}"
+							class="img-fluid"
+							alt="wckmarkets website"
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>WCKmarkets</h4>
+						<p>Web</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/wckmarkets.png' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="WCKmarkets"
+							><i class="bx bx-plus"></i
+						></a>
+						<a
+							href="http://www.wckmarkets.com/"
+							class="details-link"
+							title="More Details"
+							target="_blank"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/passwordgen.png' %}"
+							class="img-fluid"
+							alt="Password Manager"
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Password Manager</h4>
+						<p>App</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/passwordgen.png' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Password Manager"
+							><i class="bx bx-plus"></i
+						></a>
+						<a
+							href="https://github.com/TrippleA-Ashaba/password_manager"
+							class="details-link"
+							title="More Details"
+							target="_blank"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/emasonsug.png' %}"
+							class="img-fluid"
+							alt="Emasons UG"
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Emasons Uganda</h4>
+						<p>Web</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/emasonsug.png' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Emasons Uganda"
+							><i class="bx bx-plus"></i
+						></a>
+						<a
+							href="https://emasonsug.com/"
+							class="details-link"
+							title="More Details"
+							target="_blank"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 portfolio-item filter-web">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/ufarm1.png' %}"
+							class="img-fluid"
+							alt="Ufarm Markets"
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Ufarm Market</h4>
+						<p>Web</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/ufarm1.png' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Ufarm market"
+							><i class="bx bx-plus"></i
+						></a>
+						<a
+							href="https://github.com/TrippleA-Ashaba/node_ufarm_project"
+							class="details-link"
+							title="More Details"
+							target="_blank"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+					<div class="portfolio-img">
+						<img
+							src="{% static 'resume/assets/img/portfolio/ufarm.png' %}"
+							class="img-fluid"
+							alt="Ufarm Markets"
+						/>
+					</div>
+					<div class="portfolio-info">
+						<h4>Ufarm Market</h4>
+						<p>App</p>
+						<a
+							href="{% static 'resume/assets/img/portfolio/ufarm.png' %}"
+							data-gallery="portfolioGallery"
+							class="portfolio-lightbox preview-link"
+							title="Ufarm market"
+							><i class="bx bx-plus"></i
+						></a>
+						<a
+							href="https://github.com/TrippleA-Ashaba/node_ufarm_project"
+							class="details-link"
+							title="More Details"
+							target="_blank"
+							><i class="bx bx-link"></i
+						></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End My Portfolio Section -->
+
+	<!-- ======= Contact Me Section ======= -->
+	<section id="contact" class="contact">
+		<div class="container">
+			<div class="section-title">
+				<span>Contact Me</span>
+				<h2>Contact Me</h2>
+				<p>Get in touch. Let me show you how deep the rabbit hole goes.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="info-box">
+								<i class="bx bx-share-alt"></i>
+								<h3>Social Profiles</h3>
+								<div class="social-links">
+									<a href="https://twitter.com/ashabaheebwa" class="twitter"
+										><i class="bi bi-twitter"></i
+									></a>
+
+									<a href="https://github.com/TrippleA-Ashaba" class="github"
+										><i class="bi bi-github"></i
+									></a>
+
+									<a href="https://www.linkedin.com/in/tripplea/" class="linkedin"
+										><i class="bi bi-linkedin"></i
+									></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="info-box mt-4">
+								<i class="bx bx-envelope"></i>
+								<h3>Email Me</h3>
+								<p>albertashaba.a@gmail.com</p>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="info-box mt-4">
+								<i class="bx bx-phone-call"></i>
+								<h3>Call Me</h3>
+								<p>+256 703 621 524</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<form action="" method="post" role="form">
+						{% csrf_token %}{{form|crispy}}
+						<div class="text-center">
+							<button type="submit">Send Message</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Contact Me Section -->
+</main>
+<!-- End #main -->
+{% endblock content %}

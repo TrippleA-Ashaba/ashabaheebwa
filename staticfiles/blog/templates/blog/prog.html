@@ -1,0 +1,73 @@
+{% extends 'blog/base.html' %}{% load static %} {% block title %}{{title|title}}{% endblock %}
+<div></div>
+{% block content %}
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9" data-aos="fade-up">
+				{% for post in posts %}
+				<div></div>
+				<div class="d-md-flex post-entry-2 half">
+					<a href="{{post.get_absolute_url}}" class="me-4 thumbnail">
+						<img src="{{post.image.url}}" alt="" class="img-fluid" />
+					</a>
+					<div>
+						<div class="post-meta">
+							<span class="date">{{post.category}}</span>
+							<span class="mx-1">&bullet;</span>
+							<span>{{post.date_updated|date:'M jS Y'}}</span>
+						</div>
+						<h3>
+							<a href="{{post.get_absolute_url}}">{{post.title}}</a>
+						</h3>
+						<p>{{post.content|safe|truncatewords:40}}</p>
+						<div class="d-flex align-items-center author">
+							<div class="photo">
+								<img
+									src="{% static 'blog/assets/img/avatar.png' %}"
+									alt=""
+									class="img-fluid"
+								/>
+							</div>
+							<div class="name">
+								<h3 class="m-0 p-0">{{post.author}}</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+				<div class="text-start py-4">
+					<div class="custom-pagination">
+						{% if posts.has_previous %}
+						<a href="?page=1" class="prev">First</a>
+						<a href="?page={{posts.previous_page_number}}" class="prev">Prevous</a>
+						{% endif %}
+
+						<span></span>
+						{% for num in posts.paginator.page_range %}
+						<span></span>
+						{% if posts.number == num %}
+						<a href="?page={{num}}" class="active">{{num}}</a>
+						{% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+						<a href="?page={{num}}">{{num}}</a>
+						{% endif %} {% endfor %}
+
+						<span></span>
+						{% if posts.has_next %}
+						<a href="?page={{posts.next_page_number}}" class="next">Next</a>
+						<a href="?page={{posts.paginator.num_pages}}" class="next">Last</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+
+			<!-- ======= Sidebar ======= -->
+			{% include 'blog/sidebar.html' %}
+		</div>
+	</div>
+</section>
+
+<!-- End #main -->
+{% endblock content %}

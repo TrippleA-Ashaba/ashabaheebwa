@@ -1,0 +1,87 @@
+{% extends 'blog/base.html' %}{% load static %} {% load crispy_forms_tags %}
+<div></div>
+{% block title %}{{title|title}}{% endblock %}
+<div></div>
+{% block content %}
+
+<section id="contact" class="contact mb-5">
+	{% if messages %} {% for message in messages %}
+	<div class="container">
+		<div
+			{%
+			if
+			message.tags
+			%}
+			class="alert alert-{{message.tags}} alert-dismissible fade show"
+			{%
+			endif
+			%}
+			role="alert"
+		>
+			<h6 class="alert-heading mb-0 text-center fw-bold">{{message}}</h6>
+
+			<button
+				type="button"
+				class="btn-close"
+				data-bs-dismiss="alert"
+				aria-label="Close"
+			></button>
+		</div>
+	</div>
+	{% endfor %} {% endif %}
+	<div class="container" data-aos="fade-up">
+		<div class="row">
+			<div class="col-lg-12 text-center mb-5">
+				<h1 class="page-title">Get in touch</h1>
+			</div>
+		</div>
+
+		<div class="row gy-4">
+			<div class="col-md-4">
+				<div class="info-item">
+					<i class="bi bi-geo-alt"></i>
+					<h3>Address</h3>
+					<address>Mariba Bulding, Golf Course Road Kololo, Kamapala, UG</address>
+				</div>
+			</div>
+			<!-- End Info Item -->
+
+			<div class="col-md-4">
+				<div class="info-item info-item-borders">
+					<i class="bi bi-phone"></i>
+					<h3>Phone Number</h3>
+					<p><a href="tel:+256703621524">+256 703 621 524</a></p>
+				</div>
+			</div>
+			<!-- End Info Item -->
+
+			<div class="col-md-4">
+				<div class="info-item">
+					<i class="bi bi-envelope"></i>
+					<h3>Email</h3>
+					<p><a href="mailto:albertashaba.a@gmail.com">albertashaba.a@gmail.com</a></p>
+				</div>
+			</div>
+			<!-- End Info Item -->
+		</div>
+		<div class="row shadow p-3 pb-3 my-5 bg-body-tertiary rounded">
+			<div class="col"></div>
+			<div class="col-md-8">
+				<form action="{% url 'blog_contact' %}" method="post" role="form">
+					<div class="form mt-5">
+						{% csrf_token %} {{form|crispy}}
+
+						<div class="text-center">
+							<button class="btn btn-primary my-3" type="submit">Send Message</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col"></div>
+		</div>
+		<!-- End Contact Form -->
+	</div>
+</section>
+<!-- End #main -->
+
+{% endblock content %}
