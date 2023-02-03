@@ -10,6 +10,15 @@ class CommentForm(ModelForm):
         min_length=5,
         widget=forms.TextInput(attrs={"placeholder": "Enter Name"}),
     )
+    content = forms.CharField(
+        max_length=500,
+        widget=forms.Textarea(
+            attrs={
+                "rows": 4,
+                "placeholder": "Zaphod Beeblebrox is the key... I also love squirrels.",
+            }
+        ),
+    )
 
     class Meta:
         model = Comment

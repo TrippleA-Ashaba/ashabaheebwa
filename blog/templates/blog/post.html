@@ -52,6 +52,7 @@
 				<!-- ======= Comments ======= -->
 				<div class="comments">
 					<h5 class="comment-title py-4">{{comments|length}} Comments</h5>
+
 					{% for comment in comments %}
 					<div class="comment d-flex mb-1">
 						<div class="flex-shrink-0">
@@ -81,7 +82,7 @@
 						<h5 class="comment-title">
 							Leave a Comment
 							<span class="text-muted fs-6 ms-2"
-								>("Does not require login to leave a Comment")</span
+								>("Does not require to be logged in.")</span
 							>
 						</h5>
 						<form method="post">
