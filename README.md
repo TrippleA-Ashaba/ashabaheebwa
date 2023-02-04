@@ -18,6 +18,7 @@ or you can fork if you prefer.
 
 ### Add evironment variables
 create a .env file inside the base directory. ie same level as manage.py
+</br>
 ``` $ touch .env ```
 
 add the following in the .env file
@@ -42,6 +43,7 @@ If you decide to use a different DB, ensure to make changes in the django_projec
 ### Makemigrations and Migrate
 populate the database with tables
 ``` $ python manage.py makemigrations ```
+</br>
 ``` $ python manage.py migrate ```
 
 ### Collect static files
