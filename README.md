@@ -42,6 +42,7 @@ If you decide to use a different DB, ensure to make changes in the django_projec
 
 ### Makemigrations and Migrate
 populate the database with tables
+</br>
 ``` $ python manage.py makemigrations ```
 </br>
 ``` $ python manage.py migrate ```
